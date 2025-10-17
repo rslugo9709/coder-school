@@ -345,6 +345,7 @@ button:hover{
     background-color: #ffffff;
     border-color: #007BFF;
     color: black;
+    cursor: pointer;
 }
 
 
