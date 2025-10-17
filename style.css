@@ -1,0 +1,458 @@
+/*haremos una pagina mobile first*/
+*{
+    box-sizing: border-box; /*Evita que los contenedores crezcan mas de lo definido*/
+    margin: 0;
+    padding: 0;
+}
+/*Definimos los colores que usaremos en la pagina*/
+:root{
+    --resaltar: #00ABE4;
+    --texto: #1e365a;
+    --fondo: #FFFFFF;
+    --banner: #8592b5;
+}
+
+html{
+    /*Esto hace que la transicion sea suave*/
+    scroll-behavior: smooth;
+}
+
+h1{
+    font-size: 3.5em;
+    
+}
+
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2.2em;
+}
+
+p, li{
+    font-size: 1.25em;
+}
+
+
+.container{
+    margin: auto;
+    max-width: 1400px;
+
+
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+    height: 100vh;
+}
+
+header{
+    
+    color: #0A192F;
+    min-height: 30vh;
+}
+
+header .logo{
+    padding: 0;
+    margin: 0;
+}
+
+.ballet-logo {
+  font-family: "Ballet", cursive;
+  font-size: 3.6em;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2%;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0A192F;
+}
+header a:hover{
+    color: #007BFF;
+    
+}
+
+#banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh; /*Esto dice: ocupa el 90% de la altura de la pantalla*/
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("resources/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+}
+
+#banner h1{
+    font-size: 3em;
+}
+/*Animacion de mostrar la linea por debajo*/
+.enfatizar{
+    font-style: italic;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.enfatizar::after{
+    text-decoration: underline;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;    
+}
+.enfatizar:hover {
+  color: #0056b3;
+}
+.enfatizar:hover::after {
+  width: 100%;
+}
+
+nav a{
+
+    text-decoration: none;
+    position: relative;
+
+    transition: color 0.3s ease;
+    
+}
+
+nav a::after{
+    text-decoration: underline;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--texto);
+    transition: width 0.3s ease;    
+}
+
+nav a:hover {
+  color: var(--texto);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/*Aqui termina las animaciones*/
+
+.centrar{
+    text-align: center;
+}
+.espacioabajo {
+    padding-bottom: 3%;
+}
+#somos .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+.imgContainer{
+    display: none;
+}
+
+#programas {
+    background-color: var(--texto);
+    color: var(--fondo);
+    text-align: center;
+    height: 100vh;
+}
+
+/*Esto es para que no se vean las descripciones de las cartas*/
+#programas p{
+    display: none;
+}
+
+.carta p.revelar {
+  display: block;
+}
+#programas h2{
+    padding-top: 10%;
+}
+#programas .formacion{
+    
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#programas .carta{
+    height: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+    width: 100%;
+    padding-bottom: 2%;
+    align-content: center;
+}
+
+#cursos{
+    text-align: center;
+    height: 100vh;
+}
+
+#cursos .carta{
+    color: var(--fondo);
+    height: 80%;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+}
+
+#cursos .container{
+   
+    height: 90%;
+    width: 90%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+
+    padding-bottom: 5%;
+}
+#cursos h3{
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+    
+}
+.python{
+    background-image: url("resources/python.png");
+
+}
+
+
+.java{
+    background-image: url("resources/java.png");
+
+}
+
+.js{
+    background-image: url("resources/js.png");
+
+}
+.go{
+    background-image: url("resources/go.png");
+
+}
+
+
+
+.front {
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("resources/Front-end-Development.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.back{
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("resources/backend.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.full{
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("resources/fullstack.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+#beneficios {
+    margin-top: 20px;
+    background-color: var(--texto);
+    color: var(--fondo);
+    text-align: center;
+    
+}
+
+#beneficios .container{
+    margin: auto;
+    text-align: left;
+    height: 30vh;
+}
+
+#beneficios li{
+    margin: 16px 0px;
+    
+}
+
+
+#aplicar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 95vh; /*Esto dice: ocupa el 90% de la altura de la pantalla*/
+}
+
+
+footer{
+    height: 5vh;
+    text-align: right;
+    padding-right: 2%;
+}
+
+button{
+    background-color: var(--resaltar);
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    border:1px solid #E5E5E5;
+    box-shadow: 2px 2px 5px #969ba3;
+    padding: clamp(8px, 2.5%, 16px); /*Clamp dice, nunca menos de 8px, idealmente 2.5%, como maximo 16 px*/
+}
+
+
+
+button:hover{
+    background-color: #ffffff;
+    border-color: #007BFF;
+    color: black;
+}
+
+
+ul{
+    list-style: none;
+}
+
+
+
+
+
+
+@media (min-width: 720px){
+
+    header{
+        background-color: var(--fondo);
+        /*Siempre que se ponga el header como fijo se debe dar el width en 200% */
+        position: fixed;
+        width: 100%;
+        min-height: 10vh;
+    }
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 0%;
+        padding-bottom: 0%;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 10px;
+    }
+    #banner h1{
+    font-size: 3.5em;
+    }
+    #somos .container{
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .imgContainer{
+        display:initial;
+        max-width: 40%;
+        
+    }
+    .somostexto{
+        text-align: initial;
+        padding-left: 2%;
+        
+    }
+    .somostexto h2{
+        font-size: 3.5em;
+    }
+    .somostexto p{
+        font-size: 2em;
+    }
+
+    .imgContainer img{
+        object-fit: cover;
+        height: 100%;
+        width: auto;
+    }
+    #beneficios h2{
+        padding-top: 2%;
+    }
+    #programas{
+        height: 100vh;
+    }
+    #programas .formacion{
+        
+        width: 90%;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        
+        justify-content: center;
+        gap: 2rem;
+    }  
+    .formacion .carta{
+        min-height: 400px;
+        height: auto;
+    }
+    #cursos{
+        margin-top: 5%;
+        min-height: 100vh;
+    }
+    #cursos .container{
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr);
+        width: 60%;
+    }
+    #cursos{
+    text-align: center;
+    height: 50vh;
+    }   
+}
+
+@media (min-width: 720px) and (max-width:1423){
+        header .container{
+        
+        padding-left: 10%;
+    }
+}
+@media (max-width: 360px){
+
+    .ballet-logo{
+          font-size: 2.6em;
+          font-weight: 400;
+    }
+
+}
